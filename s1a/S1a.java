@@ -26,6 +26,7 @@ abstract class S1AAbstractClass {
 	}
 }
 
+//there should be only one public class in <FileName>.java file. It's name(without extension) should match the class name
 public class S1a extends S1AAbstractClass implements S1AInterface {
 	public static void main(String[] args) {
 		System.out.println("S1a:main started");		
@@ -37,7 +38,7 @@ public class S1a extends S1AAbstractClass implements S1AInterface {
 		inst.method2();
 		inst.abstractMethod();
 		inst.instanceVar+=10;
-		System.out.println("instance value: "+inst.instanceVar);
+		System.out.println("updated instance value: "+inst.instanceVar);
 		//the following will not compile: S1a.java:40: cannot assign a value to final variable ifConstant
 		//S1a.ifConstant++;
 	}

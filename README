@@ -14,3 +14,5 @@ i.e. for windows:
 set PATH=%PATH%;  
 -- to compile java file use command:
 javac <file>.java
+-- to execute program (without .class extension)
+java <classname>
