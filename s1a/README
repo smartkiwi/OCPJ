@@ -1,2 +1,6 @@
 Section 1: Declarations, Initialization, Scoping
 1.a. Create an interface that has methods and a constant. Create an abstract class with an abstract method, a non-abstract method, and an instance variable. Create a concrete class that uses both of the above.
+
+time: 
+	20 minutes to setup environment (create prj on github, set java/javac into PATH)
+	20 minutes for task
