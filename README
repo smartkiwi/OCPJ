@@ -2,7 +2,6 @@ OCP Java SE 6 Programmer Exam Practice tasks
 
 Sections:
 Section 1: Declarations, Initialization, Scoping
-1.a. Create an interface that has methods and a constant. Create an abstract class with an abstract method, a non-abstract method, and an instance variable. Create a concrete class that uses both of the above.
 
 Naming convention:
 
@@ -10,3 +9,8 @@ folder s1a - section 1 task 1
 
 
 General memos:
+-- make sure you have java and javac in your PATH:
+i.e. for windows:
+set PATH=%PATH%;  
+-- to compile java file use command:
+javac <file>.java
