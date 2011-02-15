@@ -3,3 +3,9 @@ Section 1: Declarations, Initialization, Scoping
 	a couple of classes, in different packages, 
 		to demonstrate the differences between 
 			default and protected access rules.
+			
+Compilation:
+javac S1b.java
+
+Start:
+java S1b
