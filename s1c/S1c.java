@@ -7,3 +7,80 @@
 		this() to access (one way or another) all of the constructors, 
 		based on invoking new() on the grandchild class.
 */
+
+
+public class S1c {
+	public static void main(String[] args) {
+	
+		
+		System.out.println("creating object of GrandChildClass with default constructor()");
+		GrandChildClass gcc = new GrandChildClass();
+		System.out.println("calls count: (should be 6) "+CallsCounter.getCalls());
+		
+		CallsCounter.resetCounter();
+		System.out.println("");
+		System.out.println("creating object of GrandChildClass with constructor(String str)");
+		GrandChildClass gcc1 = new GrandChildClass("TestString");
+		System.out.println("calls count: (should be 6) "+CallsCounter.getCalls());
+	}
+}
+
+/* class with static members to be used for counting called methods
+*/
+class CallsCounter
+{
+	//static variable will be set to default int value = 0;
+	static int calls;
+	
+	public static void incrementCalls() {
+		calls++;
+	}
+
+	public static int getCalls() {
+		return calls;
+	}
+	
+	public static void resetCounter() {
+		calls=0;
+	}
+}
+
+
+class ParentClass {
+	ParentClass() {
+		CallsCounter.incrementCalls();
+		System.out.println("ParentClass default constructor ()");
+	}
+
+	ParentClass(String str) {
+		CallsCounter.incrementCalls();
+		System.out.println("ParentClass constructor (String str): str="+str);
+	}	
+}
+
+class ChildClass extends ParentClass {
+	ChildClass() {
+		CallsCounter.incrementCalls();
+		System.out.println("ChildClass default constructor ()");
+	}
+	ChildClass(String str) {
+		super(str);
+		CallsCounter.incrementCalls();
+		System.out.println("ChildClass constructor (String str): str="+str);
+	}
+}
+
+class GrandChildClass extends ChildClass {
+	String parameter;
+	GrandChildClass() {
+	
+		CallsCounter.incrementCalls();
+		System.out.println("GrandChildClass default constructor ()");
+	}
+	GrandChildClass(String str) {
+		this()
+		parameter = String;
+		CallsCounter.incrementCalls();
+		System.out.println("GrandChildClass constructor (String str): str="+str);
+	}
+}
