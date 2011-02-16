@@ -75,6 +75,4 @@ class S1e {
 			countz++;
 		}
 	}
-
-	
 }
