@@ -3,14 +3,33 @@
 */
 
 class S1e {
+	
 	public static void main(String[] agrs) {
+	
 		//2D array
-		int[][] a2d = {{1,3,4,5,6,7,8,9,10},{11,12,13,14,15,16}};
+		//declare array
+		int[][] a2d;
+		
+		//construct array
+		a2d = new int[4][4];
+		
+		//initiate array
+		//when you initiate array like this - unset elements will have default int value = 0
+		a2d[0][0] = 1;
+		a2d[0][1] = 3;
+		a2d[0][2] = 4;
+		a2d[0][3] = 5;
+		
+		a2d[1][3] = 15;
+		
+		
+		
 		
 		System.out.println("2D array size: "+a2d.length);
 		print2Darray(a2d);
 		
 		//3D array
+		//declare+construct+initiate array in one line
 		int[][][] a3d = {{{}},{{}},{{}}};
 		System.out.println("3D array size: "+a3d.length);
 		
@@ -18,7 +37,7 @@ class S1e {
 		
 		a3d[1] = a2d;
 		
-		a3d[2] = a2d;
+		a3d[2][0] = a2d[0];
 		
 		print3Darray(a3d);
 	}
@@ -26,10 +45,12 @@ class S1e {
 	static void print2Darray(int[][] array2d) {
 		
 		int county = 0;
+		//one way of using for loop
 		for(int[] a : array2d) {
 			int countx = 0;
-			for(int a1 : a) {
-				System.out.printf("[%d][%d] %2d",countx,county,a1);
+			//another way of using for loop
+			for(int i=0; i<a.length; i++) {
+				System.out.printf("[%d][%d] %2d",countx,county,a[i]);
 				countx++;
 			}
 			county++;
@@ -48,6 +69,7 @@ class S1e {
 					countx++;
 				}
 				county++;
+				System.out.println();
 			}
 			System.out.println();
 			countz++;
