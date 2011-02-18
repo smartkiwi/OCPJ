@@ -32,6 +32,7 @@ public class S1c {
 		GrandChildClass gcc = new GrandChildClass();
 		System.out.println("calls count: (should be 6) "+CallsCounter.getCalls());
 		
+		ChildProtectedMethod cpm = new ChildProtectedMethod();
 		
 	}
 }
@@ -40,6 +41,7 @@ public class S1c {
 */
 class CallsCounter
 {
+
 	//static variable will be set to default int value = 0;
 	static int calls;
 	
@@ -93,5 +95,30 @@ class GrandChildClass extends ChildClass {
 		this();
 		CallsCounter.incrementCalls();
 		System.out.println("GrandChildClass constructor (String str): str="+str);
+	}
+}
+
+class ProtectedMethod {
+	ProtectedMethod() {
+		System.out.println("from ProtectedMethod.ProtectedMethod()");
+		//if default constructor loaded from child constructor - it will call child's method()
+		this.method();
+	}
+	
+	//if this method name called from child (even from super constructor) parent's method will be never called - child's method() will be executed
+	void method() {
+		
+		System.out.println("ProtectedMethod.method()");
+	}
+}
+
+class ChildProtectedMethod extends ProtectedMethod {
+	ChildProtectedMethod() {
+		super();
+		//System.out.println("from ChildProtectedMethod.ChildProtectedMethod()");
+		//method();
+	}
+	void method() {
+		System.out.println("ChildProtectedMethod.method()");
 	}
 }
