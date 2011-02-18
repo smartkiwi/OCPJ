@@ -33,7 +33,7 @@ class S2c {
 		try {
 			Exception1.throwStackOverflowError();
 		} catch (StackOverflowError e) {
-			e.printStackTrace();
+			System.out.println(e.toString());
 		}
 		try {
 			Exception1.throwNumberFormatException();
