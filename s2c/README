@@ -5,3 +5,6 @@ Write code that deliberately throws the following exceptions, without using the 
 	StackOverflowError
 	AssertionError
 	NumberFormatException
+	
+to run assertion detection mode:
+java -ea S2c
